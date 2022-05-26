@@ -1,0 +1,34 @@
+var x = getColumn("100 Birds of the World", "Image of Bird");
+var name1 = getColumn("100 Birds of the World", "Name");
+var shird = getColumn("100 Birds of the World", "Conservation Status");
+var plird = getColumn("100 Birds of the World", "Primary Color");
+
+
+onEvent("animalbutton", "click", function( ) {
+  var lightBirdFilter = [];
+  var heavyBirdFilter = [];
+  for (var i = 0; i < getColumn("100 Birds of the World", "id").length; i++) {
+    var passedBoth = true;
+    if (shird[i] != getText("dropdown1")) {
+      passedBoth = false;
+    }
+    if (plird[i] == getText("dropdown3")) {
+      if (!passedBoth){
+       appendItem(lightBirdFilter, i);
+      } else {
+       appendItem(heavyBirdFilter, i);
+      }
+    } else {
+      appendItem(lightBirdFilter, i);
+    }
+  }
+  var image = 0;
+  if (heavyBirdFilter.length > 0){
+    image = heavyBirdFilter[randomNumber(1, heavyBirdFilter.length)];
+  } else{
+    image = lightBirdFilter[randomNumber(1, lightBirdFilter.length)];
+  }
+  console.log(image);
+  setProperty("birdimage", "image", x[image]);
+  setProperty("birdName", "text", name1[image]);
+});
