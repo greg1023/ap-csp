@@ -1,0 +1,53 @@
+
+playSound("UEFA-Champions-League-2018-19-Intro-HD.mp3", true);
+//Take user to the formation 
+onEvent("letsgetstarted", "click", function( ) {
+  setScreen("formations");
+  stopSound("UEFA-Champions-League-2018-19-Intro-HD.mp3");
+  playSound("Benson.mp3", false);
+  playSound("UEFA-Champions-League-2018-19-Intro-HD.mp3", false);
+});
+// Take user to the goalkeeper
+onEvent("GoalkeeperButton", "click", function( ) {
+  stopSound("UEFA-Champions-League-2018-19-Intro-HD.mp3");
+  playSound("Goalkeeper.mp3", false);
+  setScreen("goalkeeper");
+  playSound("UEFA-Champions-League-2018-19-Intro-HD.mp3", false);
+});
+//Take user to the formations
+onEvent("BackGoalie", "click", function( ) {
+  setScreen("formations");
+});
+//Take user to the defender
+onEvent("DefenderButton", "click", function( ) {
+  stopSound("UEFA-Champions-League-2018-19-Intro-HD.mp3");
+  playSound("Defender.mp3", false);
+  setScreen("defender");
+  playSound("UEFA-Champions-League-2018-19-Intro-HD.mp3", false);
+});
+//Take user to the formations
+onEvent("BackDefender", "click", function( ) {
+  setScreen("formations");
+});
+//Take user to the Midfielder
+onEvent("MidfielderButton", "click", function( ) {
+  stopSound("UEFA-Champions-League-2018-19-Intro-HD.mp3");
+  playSound("Midfielder.mp3", false);
+  setScreen("midfielder");
+  playSound("UEFA-Champions-League-2018-19-Intro-HD.mp3", false);
+});
+//Take user to the formations
+onEvent("backmidfielder", "click", function( ) {
+  setScreen("formations");
+});
+//Take user to the attacker
+onEvent("AttackerButton", "click", function( ) {
+  stopSound("UEFA-Champions-League-2018-19-Intro-HD.mp3");
+  playSound("Attacker.mp3", false);
+  setScreen("attacker");
+  playSound("UEFA-Champions-League-2018-19-Intro-HD.mp3", false);
+});
+//Take user to the formations
+onEvent("Backattacker", "click", function( ) {
+  setScreen("formations");
+});
