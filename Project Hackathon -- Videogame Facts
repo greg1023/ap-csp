@@ -1,0 +1,75 @@
+//data list of best selling video games
+var Sales = getColumn("Best Selling Video Games", "Sales");
+var Platforms = getColumn("Best Selling Video Games", "Platforms");
+var InitialReleaseDate = getColumn("Best Selling Video Games", "Initial release date");
+var Developer = getColumn("Best Selling Video Games", "Developer");
+var Publisher = getColumn("Best Selling Video Games", "Publisher");
+
+//game varibles 
+var minecraft = [];
+var gta = [];
+var borderlands = [];
+
+//these buttons change the screen to a different one
+onEvent("againButton", "click", function( ) {
+  setScreen("homeScreen");
+});
+
+onEvent("doneButton", "click", function( ) {
+  setScreen("thanksScreen");
+});
+
+onEvent("startButton","click", function(){
+  setScreen("infoScreen");
+});
+
+//these events cause the update screen functions to run upon clicking the buttons
+onEvent("minecraftButton", "click", function( ) {
+  updateScreen();
+});
+
+onEvent("gtaButton", "click", function( ) {
+  updateScreen2();
+});
+
+onEvent("borderlandsButton", "click", function( ) {
+  updateScreen3();
+});
+
+//list 
+var i = 0;
+appendItem(minecraft, Sales[i]);
+appendItem(minecraft, Platforms[i]);
+appendItem(minecraft, InitialReleaseDate[i]);
+appendItem(minecraft, Publisher[i]);
+appendItem(minecraft, Developer[i]);
+
+i = 1;
+appendItem(gta, Sales[i]);
+appendItem(gta, Platforms[i]);
+appendItem(gta, InitialReleaseDate[i]);
+appendItem(gta, Publisher[i]);
+appendItem(gta, Developer[i]);
+
+i = 37;
+appendItem(borderlands, Sales[i]);
+appendItem(borderlands, Platforms[i]);
+appendItem(borderlands, InitialReleaseDate[i]);
+appendItem(borderlands, Publisher[i]);
+appendItem(borderlands, Developer[i]);
+
+//these are the update screen functions that will be used to display the facts on screen in the factsBox 
+function updateScreen() {
+  var index = randomNumber(0, 4);
+  setText("factsBox", minecraft[index]);
+}
+
+function updateScreen2() {
+  var index = randomNumber(0, 4);
+  setText("factsBox", gta[index]);
+}
+
+function updateScreen3() {
+  var index = randomNumber(0, 4);
+  setText("factsBox", borderlands[index]);
+}
